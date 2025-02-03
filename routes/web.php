@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ObraController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\FuncionarioController;
+use App\Http\Controllers\TipoController;
 use App\Http\Controllers\PontoController;
 use App\Http\Controllers\PlaneamentoController;
 use App\Http\Controllers\ExportarController;
@@ -22,6 +23,9 @@ Route::resource('funcionarios', FuncionarioController::class);
 // Rotas para Ponto (Registo de horas)
 Route::get('ponto', [PontoController::class, 'index'])->name('ponto.index');
 Route::post('ponto', [PontoController::class, 'store'])->name('ponto.store');
+
+// Rotas para Tipos
+Route::resource('tipos', TipoController::class);
 
 // Rotas para Planeamento
 Route::get('planeamento', [PlaneamentoController::class, 'index'])->name('planeamento.index');

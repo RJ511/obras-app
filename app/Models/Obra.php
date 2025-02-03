@@ -9,6 +9,7 @@ class Obra extends Model
 {
     use HasFactory;
 
+    protected $table = 'Obra';
     protected $primaryKey = 'obraID';
     protected $fillable = [
         'obraCliente', 'obraDesignacao', 'obraSemana',
