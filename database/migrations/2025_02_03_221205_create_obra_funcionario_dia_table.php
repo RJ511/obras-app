@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('obra_funcionario_dia', function (Blueprint $table) {
+        Schema::create('ObraFuncionarioDia', function (Blueprint $table) {
             $table->unsignedBigInteger('obraID');
             $table->unsignedBigInteger('funcionarioID');
             $table->decimal('horasTrabalhadas', 2, 1)->unsigned();
@@ -19,8 +19,8 @@ return new class extends Migration
             $table->timestamps();
 
             $table->primary(['obraID', 'funcionarioID', 'dia']);
-            $table->foreign('obraID')->references('obraID')->on('obras');
-            $table->foreign('funcionarioID')->references('funcionarioID')->on('funcionarios');
+            $table->foreign('obraID')->references('obraID')->on('Obra');
+            $table->foreign('funcionarioID')->references('funcionarioID')->on('Funcionario');
         });
     }
 
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('obra_funcionario_dia');
+        Schema::dropIfExists('ObraFuncionarioDia');
     }
 };
